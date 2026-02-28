@@ -1,65 +1,324 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"><link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet"><title>KhizarAli</title><style>body,html{overflow:hidden;margin:0}body{font-family:'Open Sans','Helvetica Neue','Hiragino Sans GB','LiHei Pro',Arial,sans-serif;color:#333}#wrapper{margin:auto;text-align:center;margin-top:8%;padding:0 10px;-webkit-user-select:none;-moz-user-select:none;user-select:none}h1{font-family:Montserrat,'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:30px;letter-spacing:9px;text-transform:uppercase;margin:12px 0;left:4px; }h2{color:#0368ff;font-weight:400;font-size:24.4px;letter-spacing:.023em;left:3px;}h2:nth-of-type(2){margin-bottom:30px}h1,h2{position:relative}#overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 18vh;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.hero {
-  max-width: 800px;
-  width: 100%;
-  padding: 0 24px;
-  transform: translateY(-15%);
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: Montserrat, Arial, sans-serif;
-  font-size: clamp(22px, 3vw, 32px);
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #111;
-  margin: 0;
-}
-  .nav {
-  position: absolute; /* or relative */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-  background: transparent;
-}
-.nav-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 24px 32px;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.nav a {
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  user-select:none;
-  color: #0368ff;
-  font-weight: 400;
-  font-size: 19.6px;
-  letter-spacing: .023em;
-  font-weight: 900;
-}
-
-  p{font-size:14px;line-height:2em;margin:0;letter-spacing:2px}canvas{position:absolute;top:0;left:0;z-index:0;width:100%;height:100%;pointer-events:none}a{color:#999;text-decoration:none;transition:color .2s ease}a:hover{color:#333}</style></head><body><div id="overlay"><div class="hero"><h1>Design, Code and things in between!</h1></div></div><div id="root"><nav class="nav">
-  <div class="nav-inner">
-  <a href="https://about.me/m-alikhizar">about</a>
-  </div>
-</nav>
-  <canvas></canvas></div><script>!function(e,t,a,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=t.createElement(a),s=t.getElementsByTagName(a)[0],o.async=1,o.src="https://www.google-analytics.com/analytics.js",s.parentNode.insertBefore(o,s)}(window,document,"script",0,"ga"),ga("create","UA-104503374-1","auto"),ga("send","pageview")</script><script>function i(){for(x.clearRect(0,0,w,h),q=[{x:0,y:.7*h+f},{x:0,y:.7*h-f}];q[1].x<w+f;)d(q[0],q[1])}function d(e,n){x.beginPath(),x.moveTo(e.x,e.y),x.lineTo(n.x,n.y);var t=n.x+(2*z()-.25)*f,i=y(n.y);x.lineTo(t,i),x.closePath(),r-=u/-50,x.fillStyle="#"+(127*v(r)+128<<16|127*v(r+u/3)+128<<8|127*v(r+u/3*2)+128).toString(16),x.fill(),q[0]=q[1],q[1]={x:t,y:i}}function y(e){var n=e+(2*z()-1.1)*f;return n>h||n<0?y(e):n}document.addEventListener("touchmove",function(e){e.preventDefault()});document.addEventListener("click", i);var c=document.getElementsByTagName("canvas")[0],x=c.getContext("2d"),pr=window.devicePixelRatio||1,w=window.innerWidth,h=window.innerHeight,f=90,q,m=Math,r=0,u=2*m.PI,v=m.cos,z=m.random;c.width=w*pr,c.height=h*pr,x.scale(pr,pr),x.globalAlpha=.6,i()</script></body></html><script type="text/javascript" src="/static/js/main.85880313.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="description" content="Problem Solver, Builder, Software Engineer specializing in Forward Deployed Engineering and Strategic Cloud Data solutions for AI startups. Expert in building scalable infrastructure, cloud architecture, and rapid deployment solutions.">
+    <meta name="author" content="Khizar Ali">
+    <meta name="keywords" content="Forward Deployed Engineering, Strategic Cloud Data, AI startups, Cloud Infrastructure, Software Engineering, Software Engineer, Builder, Problem Solver, scalable AI systems, cloud data architecture, rapid deployment">
+    
+    <title>Design, Code - Software Engineer Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="canonical" href="https://design-code.ai/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0368ff">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Design, Code - Software Engineer Portfolio">
+    <meta property="og:description" content="Problem Solver, Builder, Software Engineer specializing in Forward Deployed Engineering and Strategic Cloud Data solutions for AI startups. Expert in building scalable infrastructure, cloud architecture, and rapid deployment solutions.">
+    <meta property="og:url" content="https://design-code.ai/">
+    <meta property="og:site_name" content="Design, Code">
+    <meta property="og:image" content="https://m-alikhizar.github.io/og-image.png">
+    <meta property="og:image:width" content="4068">
+    <meta property="og:image:height" content="2300">
+    <meta property="og:image:alt" content="Design, Code - Software Engineer Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@m_alikhizar">
+    <meta name="twitter:creator" content="@m_alikhizar">
+    <meta name="twitter:title" content="Design, Code - Software Engineer Portfolio">
+    <meta name="twitter:description" content="Problem Solver, Builder, Software Engineer specializing in Forward Deployed Engineering and Strategic Cloud Data solutions for AI startups.">
+    <meta name="twitter:image" content="https://m-alikhizar.github.io/og-image.png">
+    <meta name="twitter:image:alt" content="Design, Code - Software Engineer Portfolio">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="language" content="English">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+    <meta name="subject" content="Software Engineering, Cloud Infrastructure, AI Solutions">
+    
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Khizar Ali",
+        "jobTitle": ["Software Engineer", "Problem Solver", "Builder"],
+        "description": "Problem Solver, Builder, Software Engineer specializing in Forward Deployed Engineering and Strategic Cloud Data solutions for AI startups",
+        "url": "https://m-alikhizar.github.io/",
+        "sameAs": [
+            "https://about.me/m-alikhizar"
+        ],
+        "knowsAbout": [
+            "Forward Deployed Engineering",
+            "Strategic Cloud Data",
+            "AI Infrastructure",
+            "Cloud Architecture",
+            "Software Engineering",
+            "Problem Solving",
+            "Building Scalable Systems"
+        ],
+        "offers": {
+            "@type": "Service",
+            "serviceType": "Software Engineering Consulting",
+            "description": "Forward Deployed Engineering and Strategic Cloud Data solutions for AI startups"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background: #fff;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+        }
+        
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: #0368ff;
+            font-weight: 900;
+            font-size: 19.6px;
+            letter-spacing: 0.023em;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            user-select: none;
+        }
+        
+        .nav a:hover {
+            color: #0056cc;
+        }
+        
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 18vh;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .hero {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 24px;
+            transform: translateY(-15%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: clamp(22px, 3vw, 32px);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #111;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #666;
+            margin: 20px 0 0 0;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        
+        #root {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-inner {
+                padding: 16px 20px;
+            }
+            
+            .nav a {
+                font-size: 16px;
+            }
+            
+            .hero {
+                padding: 0 16px;
+            }
+            
+            #overlay {
+                padding-top: 15vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(18px, 4vw, 24px);
+                letter-spacing: 0.2em;
+            }
+            
+            .nav-inner {
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="https://khizarali.com" target="_blank" rel="noopener noreferrer" aria-label="About">
+                about
+            </a>
+        </div>
+    </nav>
+    
+    <main id="overlay" role="main">
+        <section class="hero">
+            <h1>Design, Code and things in between</h1>
+            <p>Literally, how can we work together? This is the question that has been mulling on the horizon, even before design, code and things in between. No reliance on third parties, middle man, nor distributor. Full control over lost time.</p>
+        </section>
+    </main>
+    
+    <div id="root">
+        <canvas aria-hidden="true"></canvas>
+    </div>
+    
+    <script>
+        (function() {
+            'use strict';
+            
+            const canvas = document.querySelector('canvas');
+            const ctx = canvas.getContext('2d');
+            const pixelRatio = window.devicePixelRatio || 1;
+            
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            const amplitude = 90;
+            let hue = 0;
+            const TWO_PI = Math.PI * 2;
+            const cos = Math.cos;
+            const random = Math.random;
+            
+            let trail = [
+                { x: 0, y: 0.7 * height + amplitude },
+                { x: 0, y: 0.7 * height - amplitude }
+            ];
+            
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * pixelRatio;
+                canvas.height = height * pixelRatio;
+                ctx.scale(pixelRatio, pixelRatio);
+                ctx.globalAlpha = 0.6;
+            }
+            
+            function generateWavePoint(y) {
+                const newY = y + (2 * random() - 1.1) * amplitude;
+                if (newY > height || newY < 0) {
+                    return generateWavePoint(y);
+                }
+                return newY;
+            }
+            
+            function drawTriangle(p1, p2) {
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                
+                const nextX = p2.x + (2 * random() - 0.25) * amplitude;
+                const nextY = generateWavePoint(p2.y);
+                
+                ctx.lineTo(nextX, nextY);
+                ctx.closePath();
+                
+                hue -= TWO_PI / 50;
+                const color = (127 * cos(hue) + 128) << 16 | 
+                             (127 * cos(hue + TWO_PI / 3) + 128) << 8 | 
+                             (127 * cos(hue + TWO_PI * 2 / 3) + 128);
+                
+                ctx.fillStyle = '#' + color.toString(16);
+                ctx.fill();
+                
+                trail[0] = trail[1];
+                trail[1] = { x: nextX, y: nextY };
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                
+                trail = [
+                    { x: 0, y: 0.7 * height + amplitude },
+                    { x: 0, y: 0.7 * height - amplitude }
+                ];
+                
+                while (trail[1].x < width + amplitude) {
+                    drawTriangle(trail[0], trail[1]);
+                }
+            }
+            
+            function init() {
+                resizeCanvas();
+                animate();
+            }
+            
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+            
+            window.addEventListener('resize', resizeCanvas);
+            document.addEventListener('click', animate);
+            
+            init();
+        })();
+    </script>
+</body>
+</html>
