@@ -89,23 +89,81 @@
 
         html,
         body {
-            height: 100%;
-            overflow: hidden;
+            min-height: 100%;
             font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
             color: #333;
             background: #fff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark {
+            background: #0e0e0e;
+            color: #ccc;
+        }
+
+        body.dark .hero p,
+        body.dark .hero h1 {
+            color: #ddd;
+        }
+
+        body.dark .writings h2 {
+            color: #ddd;
+        }
+
+        body.dark .social-links a {
+            color: #ccc;
+        }
+
+        body.dark .social-links a:hover {
+            background: #222;
+        }
+
+        body.dark .footer p {
+            color: #555;
+        }
+
+        #theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-bottom: 32px;
+            margin-top: 32px;
+            padding: .5rem;
+            border: none;
+            border-radius: .25rem;
+            background: transparent;
+            color: #27272a;
+            cursor: pointer;
+            pointer-events: all;
+            transition: background 0.2s;
+        }
+
+        #theme-toggle:hover {
+            background: #e4e4e7;
+        }
+
+        body.dark #theme-toggle {
+            color: #ccc;
+        }
+
+        body.dark #theme-toggle:hover {
+            background: #222;
+        }
+
+        #theme-toggle svg {
+            width: 1.4em;
+            height: 1.4em;
+            fill: currentColor;
         }
 
         #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: relative;
             z-index: 2;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             pointer-events: none;
             user-select: none;
         }
@@ -114,7 +172,7 @@
             max-width: 800px;
             width: 100%;
             padding: 0 24px;
-            padding-top: 11vh;
+            padding-top: 32px;
         }
 
         .hero h1 {
@@ -130,8 +188,8 @@
 
         .hero p {
             font-size: clamp(15px, 1.7vw, 18px);
-            color: #666;
-            margin: 20px 0 0 0;
+            color: #111;
+            padding: 20px 0 0 0;
             letter-spacing: 0.05em;
             font-weight: 400;
             line-height: 1.618;
@@ -185,7 +243,7 @@
         }
 
         .writings a {
-            font-size: clamp(13px, 1.3vw, 15px);
+            font-size: clamp(14px, 1.4vw, 15px);
             color: #0953ff;
             text-decoration: none;
             letter-spacing: 0.02em;
@@ -197,32 +255,27 @@
         }
 
         #root {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
         }
 
         canvas {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
             width: 100%;
             height: 100%;
             pointer-events: none;
         }
 
         @media (max-width: 768px) {
-            .nav-inner {
-                padding: 16px 20px;
-            }
-
-            .nav a {
-                font-size: 16px;
-            }
 
             .hero {
-                padding: 0 16px;
+                padding: 32px;
             }
         }
 
@@ -230,10 +283,6 @@
             .hero h1 {
                 font-size: clamp(18px, 4vw, 22px);
                 letter-spacing: 0.2em;
-            }
-
-            .nav-inner {
-                padding: 12px 16px;
             }
 
             .social-links {
@@ -245,13 +294,32 @@
                 height: 44px;
             }
         }
+
+        .footer {
+            max-width:800px;
+            width:100%;
+            padding:2rem 24px;
+            pointer-events:none;
+            margin-top:auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+
     <main id="overlay" role="main">
+
         <section class="hero">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <svg id="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none">
+                    <path d="M12 4.354a.75.75 0 0 1 .75.75V7a.75.75 0 0 1-1.5 0V5.104a.75.75 0 0 1 .75-.75ZM12 17a.75.75 0 0 1 .75.75V19a.75.75 0 0 1-1.5 0v-1.25A.75.75 0 0 1 12 17ZM4.354 12a.75.75 0 0 1 .75-.75H7a.75.75 0 0 1 0 1.5H5.104a.75.75 0 0 1-.75-.75ZM17 12a.75.75 0 0 1 .75-.75H19a.75.75 0 0 1 0 1.5h-1.25A.75.75 0 0 1 17 12ZM6.343 6.343a.75.75 0 0 1 1.06 0l.884.884a.75.75 0 1 1-1.06 1.06l-.884-.884a.75.75 0 0 1 0-1.06ZM15.713 15.713a.75.75 0 0 1 1.06 0l.884.884a.75.75 0 1 1-1.06 1.06l-.884-.884a.75.75 0 0 1 0-1.06ZM6.343 17.657a.75.75 0 0 1 0-1.06l.884-.884a.75.75 0 1 1 1.06 1.06l-.884.884a.75.75 0 0 1-1.06 0ZM15.713 8.287a.75.75 0 0 1 0-1.06l.884-.884a.75.75 0 1 1 1.06 1.06l-.884.884a.75.75 0 0 1-1.06 0ZM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+                </svg>
+                <svg id="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/>
+                </svg>
+            </button>
             <!-- <h1>Khizar Ali</h1> -->
-            <p>Hi, I'm Khizar. I build software. I grew up in Pakistan and have been building on the web & mobile for over a decade. I worked at Convo, SVTRobotics, and Paprika before going independent technologist. I've built, shipped and scaled products like Keevi, SuperKool, Zora Health and many others.</p>
+            <p>Hi, I'm Khizar. I build software. I grew up in Pakistan and have been building on the web & mobile for over a decade. I worked at Convo, SVT Robotics, and Paprika before going independent technologist. I've built, shipped and scaled products like Keevi, SuperKool, Zora Health and many others.</p>
 
             <nav class="social-links" aria-label="Social links">
                 <!-- GitHub -->
@@ -298,6 +366,10 @@
 
             </div>
         </section>
+
+        <footer class="footer">
+            <p style="font-size:13px;color:#999;letter-spacing:0.03em;">&copy; 2026 Khizar Ali. All rights reserved.</p>
+        </footer>
     </main>
 
     <div id="root">
@@ -388,9 +460,25 @@
             }, { passive: false });
 
             window.addEventListener('resize', resizeCanvas);
-            document.addEventListener('click', animate);
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('a, button')) return;
+                animate();
+            });
 
             init();
+        })();
+
+        (function() {
+            const btn = document.getElementById('theme-toggle');
+            const sun = document.getElementById('icon-sun');
+            const moon = document.getElementById('icon-moon');
+
+            btn.addEventListener('click', function() {
+                document.body.classList.toggle('dark');
+                const isDark = document.body.classList.contains('dark');
+                sun.style.display = isDark ? '' : 'none';
+                moon.style.display = isDark ? 'none' : '';
+            });
         })();
     </script>
 </body>
