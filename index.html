@@ -261,6 +261,7 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            pointer-events: none;
         }
 
         canvas {
@@ -457,10 +458,6 @@
                 resizeCanvas();
                 animate();
             }
-
-            document.addEventListener('touchmove', function(e) {
-                e.preventDefault();
-            }, { passive: false });
 
             window.addEventListener('resize', resizeCanvas);
             document.addEventListener('click', function(e) {
